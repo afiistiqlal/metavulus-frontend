@@ -6,7 +6,7 @@ type Props = {
 
 const GradientText = ({ text }: Props) => {
   return (
-    <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-blue-600">
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-mv-primary-2 to-mv-secondary-4">
       {text}{" "}
     </span>
   );

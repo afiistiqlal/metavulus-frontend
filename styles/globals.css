@@ -46,24 +46,9 @@
     src: url("/fonts/Roboto-Bold.ttf") format("truetype");
   }
 }
-body {
-  @apply text-[15px] font-RobotoRegular leading-[15px] tracking-normal text-black;
-}
 
 div {
   @apply border;
-}
-
-@layer components {
-  .one-liner {
-    @apply text-[120px] font-QuicksandBold tracking-normal;
-  }
-  .header {
-    @apply text-[70px] font-QuicksandBold tracking-normal;
-  }
-  .sub-header {
-    @apply text-[48px] font-QuicksandBold tracking-normal;
-  }
 }
 
 @layer base {

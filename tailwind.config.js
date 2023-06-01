@@ -6,11 +6,6 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    screens: {
-      sm: "360px",
-      md: "960px",
-      lg: "1440px",
-    },
     fontFamily: {
       QuicksandLight: ["QuicksandLight"],
       QuicksandRegular: ["QuicksandRegular"],
@@ -24,6 +19,14 @@ module.exports = {
       RobotoSemibold: ["RobotoSemibold"],
     },
     extend: {
+      width: {
+        1440: "1440px",
+      },
+      screens: {
+        sm: "360px",
+        md: "960px",
+        lg: "1440px",
+      },
       colors: {
         "mv-primary": {
           0: "#78D64B",

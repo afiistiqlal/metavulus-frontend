@@ -19,8 +19,8 @@ module.exports = {
       RobotoSemibold: ["RobotoSemibold"],
     },
     extend: {
-      width: {
-        1440: "1440px",
+      maxWidth: {
+        main: "1440px",
       },
       screens: {
         sm: "360px",

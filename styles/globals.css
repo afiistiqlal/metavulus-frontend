@@ -47,9 +47,6 @@
   }
 }
 
-div {
-  @apply border;
-}
 
 @layer base {
   h1 {

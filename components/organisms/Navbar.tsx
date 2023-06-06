@@ -9,7 +9,7 @@ type Props = {};
 
 const Navbar = (props: Props) => {
   return (
-    <div className="navbar bg-mv-gray-2 flex justify-between items-center h-[64px] px-[72px]">
+    <div className="bg-mv-gray-2 flex justify-between items-center h-[64px] px-[72px]">
       <div className="w-1/2">
         <Image src={Logo} alt="" width={30} height={10} />
       </div>

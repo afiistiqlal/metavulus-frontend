@@ -1,13 +1,15 @@
-import React from 'react'
+import React from "react";
 
 type Props = {
-  text: string
-}
+  text: string;
+};
 
-const OneLiner = ({text}: Props) => {
+const OneLiner = ({ text }: Props) => {
   return (
-    <div className='text-[120px] font-QuicksandBold tracking-tight leading-tight'>{text}</div>
-  )
-}
+    <div className="sm:text-4xl md:text-6xl lg:text-9xl font-QuicksandBold tracking-tight leading-loose">
+      {text}
+    </div>
+  );
+};
 
-export default OneLiner
+export default OneLiner;

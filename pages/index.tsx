@@ -3,7 +3,7 @@ import Homepage from "@/components/pages/Homepage";
 
 export default function Home() {
   return (
-    <div className="text-[15px] font-RobotoRegular leading-[15px] tracking-normal max-w-main">
+    <div className="text-base font-RobotoRegular leading-4 tracking-normal">
       <ComingSoonPage/>
     </div>
   );

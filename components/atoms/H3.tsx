@@ -6,7 +6,7 @@ type Props = {
 
 const H3 = ({ text }: Props) => {
   return (
-    <div className="text-[32px] leading-[37px] tracking-wide font-QuicksandRegular">
+    <div className="sm:text-sm md:text-xl lg:text-4xl leading-9 tracking-wide font-QuicksandRegular">
       {text}
     </div>
   );

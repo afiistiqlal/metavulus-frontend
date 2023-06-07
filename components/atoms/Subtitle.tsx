@@ -6,7 +6,7 @@ type Props = {
 
 const Subtitle = ({text}: Props) => {
   return (
-    <div className='text-[18px] leading-[20px] font-RobotoLight tracking-[0.5px'>{text}</div>
+    <div className='text-lg leading-5 font-QuicksandSemibold tracking-tight'>{text}</div>
   )
 }
 

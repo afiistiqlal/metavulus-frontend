@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "@/components/organisms/Navbar";
-import Screen1 from "@/components/templates/HomePage/Screen1";
+import Screen1 from "@/components/templates/HomePage/Hero";
 import Screen2 from "@/components/templates/HomePage/Screen2";
 import Screen3 from "../templates/HomePage/Screen3";
 

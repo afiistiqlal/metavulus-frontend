@@ -1,30 +1,30 @@
 import Image from "next/image";
-import Logo from "/public/logo.png";
+import Logo from "/public/Metavulus Logo_PNG_Icon Color.png";
 import React from "react";
 import Link from "next/link";
-import H4 from "../atoms/H4";
-import Button from "../atoms/Button";
+import Subtitle from "../atoms/Subtitle";
+import Button from "../atoms/ButtonPrimary";
 
 type Props = {};
 
 const Navbar = (props: Props) => {
   return (
-    <div className="bg-mv-gray-2 flex justify-between items-center h-[64px] px-[72px]">
+    <div className="bg-[#F4F7FF] flex justify-between items-center h-16 px-[72px]">
       <div className="w-1/2">
         <Image src={Logo} alt="" width={30} height={10} />
       </div>
-      <div className="flex flex-row gap-6 justify-start w-2/5">
+      <div className="flex flex-row gap-12 justify-start w-2/5">
         <Link href={"/"} className="">
-          <H4 text="Lorem" />
+          <Subtitle text="Lorem" />
         </Link>
         <Link href={"/"} className="">
-          <H4 text="Features" />
+          <Subtitle text="Features" />
         </Link>
         <Link href={"/"} className="">
-          <H4 text="Events" />
+          <Subtitle text="Events" />
         </Link>
         <Link href={"/"} className="">
-          <H4 text="News" />
+          <Subtitle text="News" />
         </Link>
       </div>
       <div className="">

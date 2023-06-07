@@ -6,7 +6,7 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   return (
-    <div className="text-base font-RobotoRegular leading-[15px] tracking-normal min-w-full max-w-main">
+    <div className="text-base font-RobotoRegular leading-[15px] tracking-normal mx-auto max-w-main">
       {children}
     </div>
   );

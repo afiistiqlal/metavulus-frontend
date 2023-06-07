@@ -6,7 +6,7 @@ type Props = {
 
 const Container = ({ children }: Props) => {
   return (
-    <div className="w-full min-h-screen flex flex-col items-center my-4">
+    <div className="w-full min-h-screen flex flex-col gap-5 lg:gap-0 items-center my-4">
       {children}
     </div>
   );

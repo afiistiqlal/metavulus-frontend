@@ -6,9 +6,9 @@ type Props = {};
 
 const index = (props: Props) => {
   return (
-    <Layout>
-      <Homepage />{" "}
-    </Layout>
+    
+      <Homepage />
+    
   );
 };
 

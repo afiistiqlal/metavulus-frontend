@@ -1,7 +1,7 @@
 import React from "react";
 
 type Props = {
-  textColor: string;
+  textColor?: string;
   text: string;
 };
 

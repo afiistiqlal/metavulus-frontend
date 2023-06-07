@@ -9,22 +9,22 @@ type Props = {};
 
 const Navbar = (props: Props) => {
   return (
-    <div className="bg-[#F4F7FF] flex justify-between items-center h-16 px-[72px]">
+    <div className="flex justify-between items-center h-16 px-6 lg:px-[72px]">
       <div className="w-1/2">
         <Image src={Logo} alt="" width={30} height={10} />
       </div>
-      <div className="flex flex-row gap-12 justify-start w-2/5">
+      <div className="hidden lg:flex flex-row gap-12 justify-start w-2/5">
         <Link href={"/"} className="">
-          <Subtitle text="Lorem" />
+          <Subtitle menu={true} text="Learn" />
         </Link>
         <Link href={"/"} className="">
-          <Subtitle text="Features" />
+          <Subtitle menu={true} text="Forum" />
         </Link>
         <Link href={"/"} className="">
-          <Subtitle text="Events" />
+          <Subtitle menu={true} text="Events" />
         </Link>
         <Link href={"/"} className="">
-          <Subtitle text="News" />
+          <Subtitle menu={true} text="News" />
         </Link>
       </div>
       <div className="">

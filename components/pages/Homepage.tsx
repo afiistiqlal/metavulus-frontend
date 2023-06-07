@@ -4,22 +4,36 @@ import Hero from "@/components/templates/HomePage/Hero";
 import Screen2 from "@/components/templates/HomePage/Screen2";
 import Screen3 from "../templates/HomePage/Screen3";
 import Screen4 from "../templates/HomePage/Screen4";
-import Screen5 from "../templates/HomePage/Screen5";
+import Ourmindset from "../templates/HomePage/Screen5";
 import Screen6 from "../templates/HomePage/Screen6";
 import HomeFooter from "../templates/HomePage/HomeFooter";
+import Layout from "../templates/Layout";
 
 type Props = {};
 
 const Homepage = (props: Props) => {
   return (
-    <div>
-      <Navbar />
-      <Hero />
+    <div className="bg-white relative">
+      <div className="w-full bg-mv-white-4">
+        <Layout>
+          <Navbar />
+        </Layout>
+      </div>
+      <div className="w-full bg-mv-white-4">
+        <Layout>
+          <Hero />
+        </Layout>
+      </div>
       <Screen2 />
-      <Screen3 />
-      <Screen4 />
-      <Screen5 />
-      <Screen6 />
+      <Layout>
+        <Screen3 />
+      </Layout>
+      <div className="flex flex-col">
+        <Screen4 />
+        <Ourmindset />
+        <Screen6 />
+      </div>
+
       <HomeFooter />
     </div>
   );

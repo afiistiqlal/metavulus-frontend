@@ -7,11 +7,11 @@ type Props = {};
 
 const Screen3 = (props: Props) => {
   return (
-    <div className="flex w-full justify-center my-4">
-      <div className="w-1/3 bg-mv-primary-1 rounded-xl">
-        <div className="w-[508px] h-[380px]"></div>
+    <div className="flex flex-col lg:flex-row w-full justify-center my-4 p-6">
+      <div className="w-full lg:w-1/3 bg-mv-primary-1 rounded-xl">
+        <div className="lg:w-[508px] h-[380px]"></div>
       </div>
-      <div className="w-1/2 p-20">
+      <div className=" w-full lg:w-1/2 lg:p-20 pt-10 flex flex-col gap-5">
         <HomePageSubHeader
           textColor="Learn"
           text=" and develop your

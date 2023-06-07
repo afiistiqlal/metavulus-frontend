@@ -11,9 +11,9 @@ type Props = {};
 
 const Screen4 = (props: Props) => {
   return (
-    <div className="bg-mv-white-4 rounded-[75px] py-14 mt-32 overflow-visible">
+    <div className="rounded-[50px] lg:rounded-[75px] bg-mv-white-4 py-14 mt-10 lg:mt-32 z-30 overflow-visible p-6">
       <Container>
-        <div className="w-1/3 text-center flex flex-col gap-4">
+        <div className="w-full lg:w-1/3 text-center flex flex-col gap-4">
           <HomePageSubHeader
             textColor="Get"
             text="your trading journal
@@ -25,7 +25,7 @@ const Screen4 = (props: Props) => {
           <Image src={TradingJournal} alt="" width={0} height={0} />
         </div>
         <div className="">
-          <ButtonPrimary text="Connect to MT4"/>
+          <ButtonPrimary text="Connect to MT4" />
         </div>
       </Container>
     </div>

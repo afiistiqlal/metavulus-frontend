@@ -6,7 +6,7 @@ type Props = {
 
 const OneLiner = ({ text }: Props) => {
   return (
-    <div className="text-[30px] md:text-6xl lg:text-[87px] font-QuicksandBold tracking-tight leading-loose">
+    <div className="text-[28px] md:text-6xl lg:text-[87px] font-QuicksandBold tracking-tight leading-loose">
       {text}
     </div>
   );

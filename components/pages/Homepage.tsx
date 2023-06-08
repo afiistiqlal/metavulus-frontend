@@ -8,12 +8,14 @@ import Ourmindset from "../templates/HomePage/Screen5";
 import Screen6 from "../templates/HomePage/Screen6";
 import HomeFooter from "../templates/HomePage/HomeFooter";
 import Layout from "../templates/Layout";
+import Seo from "../templates/Seo";
 
 type Props = {};
 
 const Homepage = (props: Props) => {
   return (
     <div className="bg-white relative">
+      <Seo />
       <div className="w-full bg-mv-white-4">
         <Layout>
           <Navbar />

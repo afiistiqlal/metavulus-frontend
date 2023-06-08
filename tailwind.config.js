@@ -10,7 +10,7 @@ module.exports = {
       sm: "360px",
       md: "960px",
       lg: "1440px",
-      xl: "1920PX"
+      xl: "1920PX",
     },
     fontFamily: {
       QuicksandLight: ["QuicksandLight"],
@@ -65,6 +65,10 @@ module.exports = {
       },
       boxShadow: {
         gradient: "-15px -5px 100px -10px #78D64B, 5px 15px 70px -20px #A7E48A",
+      },
+      backgroundImage: {
+        hero: "url('/images/herobg.png')",
+        arrow: "url('/images/arrow.png')",
       },
     },
   },

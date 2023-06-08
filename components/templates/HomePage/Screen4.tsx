@@ -21,8 +21,14 @@ const Screen4 = (props: Props) => {
           />
           <Paragraph text="Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices tincidunt ex, et rutrum lorem. Quisque at ex quam. Donec rhoncus eget ex porttitor tincidunt." />
         </div>
-        <div className="">
-          <Image src={TradingJournal} alt="" width={0} height={0} />
+        <div className="w-full flex justify-center items-center">
+          <Image
+            className="w-8/12"
+            src={TradingJournal}
+            alt=""
+            width={0}
+            height={0}
+          />
         </div>
         <div className="">
           <ButtonPrimary text="Connect to MT4" />

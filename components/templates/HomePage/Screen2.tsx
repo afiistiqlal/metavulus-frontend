@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Subtitle from "@/components/atoms/Subtitle";
 import H3 from "@/components/atoms/H3";
-import Trending from "/public/trending.png";
+import Trending from "@/public/images/screen2.png";
+import Trending1 from "@/public/trending.png";
 import Paragraph from "@/components/atoms/Paragraph";
 import Image from "next/image";
 import HomePageSubHeader from "@/components/molecules/HomePageSubHeader";
@@ -62,8 +63,8 @@ const TradingJournal = (props: Props) => {
         </Marquee>
       </div>
       <Layout>
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-center p-6 lg:p-0 -mt-24 lg:mt-0">
-          <div className="w-full lg:w-1/3 flex flex-col gap-4">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-center p-6 lg:px-[160px] -mt-24 lg:mt-0">
+          <div className="w-full lg:w-6/12 flex flex-col gap-4">
             <HomePageSubHeader
               textColor="Connect"
               text="with like minded people"
@@ -73,7 +74,7 @@ const TradingJournal = (props: Props) => {
               <ButtonPrimary text="Say Hi!" />
             </div>
           </div>
-          <div className="w-full lg:w-1/2 flex justify-center pb-10 lg:pb-0">
+          <div className="w-full lg:w-6/12 flex justify-center pb-10 lg:pb-0">
             <Image src={Trending} alt="" width={0} height={0} />
           </div>
         </div>

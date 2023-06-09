@@ -13,7 +13,7 @@ const ForumCard = (props: Props) => {
     { id: 3 },
   ]);
   return (
-    <div className="flex w-auto shadow-xl py-5 rounded-xl justify-between px-10">
+    <div className="flex w-10/12 mx-auto shadow-xl py-5 rounded-xl justify-between px-10 hover:scale-105 transition-all ease-out">
       <div className="flex flex-col gap-4">
         <div className="flex items-center gap-4 text-sm">
           <ProfilePicture />

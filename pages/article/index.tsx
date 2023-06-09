@@ -19,9 +19,7 @@ const Index = (props: Props) => {
   };
   return (
     <div className="w-full">
-      <Head>
-        <title>Meta Vulus</title>
-      </Head>
+      <Seo metaTitle="News" />
       <div className="w-full bg-white shadow-xl">
         <Layout>
           <Navbar />
@@ -40,7 +38,7 @@ const Index = (props: Props) => {
         </div>
       </BoxedLayout>
       <BoxedLayout>
-        <div className="flex flex-row items-center justify-center flex-wrap gap-6 mt-10 pb-10">
+        <div className="flex flex-row items-center justify-center flex-wrap gap-6 mt-10 pb-20">
           <div onClick={click} className="flex flex-col cursor-pointer">
             <div className="lg:w-[630px] overflow-hidden relative">
               <Image className="w-full" src={placeholder} alt="" />

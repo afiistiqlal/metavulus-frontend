@@ -37,8 +37,8 @@ const Navbar = (props: Props) => {
   }, []);
 
   return (
-    <div className="flex justify-between items-center h-16 px-6 lg:px-[72px]">
-      <div className="w-1/2">
+    <div className="flex justify-between items-center py-5 px-6 lg:px-[72px] ">
+      <div className="w-6/12">
         <Link href={"/"}>
           <Image
             className="w-[50px]"
@@ -49,32 +49,12 @@ const Navbar = (props: Props) => {
           />
         </Link>
       </div>
-      <div className="hidden lg:flex flex-row gap-12 justify-start w-2/5">
-        <Link href={"/learn/forex"} className="">
-          <Subtitle menu={true} text="Learn" />
-        </Link>
-        <Link href={"/Forum"} className="">
-          <Subtitle menu={true} text="Forum" />
-        </Link>
-        <Link href={"#"} className="">
-          <Subtitle menu={true} text="Events" />
-        </Link>
-        <Link href={"/article"} className="">
-          <Subtitle menu={true} text="News" />
-        </Link>
-      </div>
-      <div onClick={login} className="mr-5">
-        <Button text="Connect" />
-      </div>
-      <button ref={menuBtnRef} className="hamburger lg:hidden">
-        <div className="bar"></div>
-      </button>
-      <nav className="mobile-container">
-        <ul ref={mobileMenuRef} className="mobile-nav">
+      <div className="w-6/12 lg:flex flex-row  gap-12 mr-5">
+        <div className="hidden gap-5 items-center lg:flex">
           <Link href={"/learn/forex"} className="">
             <Subtitle menu={true} text="Learn" />
           </Link>
-          <Link href={"#"} className="">
+          <Link href={"/Forum"} className="">
             <Subtitle menu={true} text="Forum" />
           </Link>
           <Link href={"#"} className="">
@@ -83,8 +63,33 @@ const Navbar = (props: Props) => {
           <Link href={"/article"} className="">
             <Subtitle menu={true} text="News" />
           </Link>
-        </ul>
-      </nav>
+        </div>
+        <div onClick={login} className="flex justify-end">
+          <Button text="Connect" />
+        </div>
+      </div>
+
+      <div>
+        <button ref={menuBtnRef} className="hamburger lg:hidden">
+          <div className="bar"></div>
+        </button>
+        <nav className="mobile-container">
+          <ul ref={mobileMenuRef} className="mobile-nav">
+            <Link href={"/learn/forex"} className="">
+              <Subtitle menu={true} text="Learn" />
+            </Link>
+            <Link href={"#"} className="">
+              <Subtitle menu={true} text="Forum" />
+            </Link>
+            <Link href={"#"} className="">
+              <Subtitle menu={true} text="Events" />
+            </Link>
+            <Link href={"/article"} className="">
+              <Subtitle menu={true} text="News" />
+            </Link>
+          </ul>
+        </nav>
+      </div>
     </div>
   );
 };

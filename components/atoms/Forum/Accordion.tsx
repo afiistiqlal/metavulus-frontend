@@ -4,7 +4,7 @@ import { FaChevronDown, FaChevronRight, FaHashtag } from "react-icons/fa";
 
 type AccordionProps = {
   title: string;
-  content: string[];
+  content: any;
 };
 
 const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
@@ -29,7 +29,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
       </button>
       {isOpen && (
         <div className="w-full">
-          {content.map((item, index) => (
+          {content.map((item: any, index: any) => (
             <div className="flex py-1" key={index}>
               <div className="w-1/12"> </div>
               <Link

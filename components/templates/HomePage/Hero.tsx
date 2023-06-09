@@ -30,15 +30,7 @@ const Hero = (props: Props) => {
             height={0}
           />
         </div>
-        <div className="absolute top-0 right-4">
-          <Image
-            className="w-4/12 hidden lg:flex "
-            src={arrowhead}
-            alt=""
-            width={1000}
-            height={0}
-          />
-        </div>
+
         <div className="">
           {/* <Image src={GradientLine} alt="" width={1300} height={328}/> */}
         </div>

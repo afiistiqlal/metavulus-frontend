@@ -23,7 +23,7 @@ const Index = (props: Props) => {
           Dive in to lift <span className="text-[#55B328]">up</span>
         </h1>
       </div>
-      <div className="w-full lg:w-8/12  pt-2 flex flex-col">
+      <div className="w-full lg:w-8/12  pt-2 flex flex-col overflow-y-auto pb-10">
         <div>
           <Link href={"/"}>Back to home</Link>
         </div>

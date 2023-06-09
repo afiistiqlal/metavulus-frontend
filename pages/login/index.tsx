@@ -22,12 +22,12 @@ const Index = (props: Props) => {
           Dive in to lift <span className="text-[#55B328]">up</span>
         </h1>
       </div>
-      <div className="w-full lg:w-8/12  pt-2 flex flex-col">
+      <div className="w-full lg:w-8/12 h-screen  pt-2 flex flex-col">
         <div className="ml-3">
           <Link href={"/"}>Back to home</Link>
         </div>
 
-        <div className="w-full flex flex-col items-center gap-5 mt-20 lg:mt-44">
+        <div className="w-full flex flex-col items-center justify-center gap-5 mt-20">
           <Image className="w-1/12" src={logo} alt="" />
           <h1 className="font-QuicksandBold text-[25px] leading-[25px]">
             Welcome Back!

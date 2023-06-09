@@ -1,6 +1,6 @@
 import Accordion from "@/components/atoms/Forum/Accordion";
 import ForumSearch from "@/components/molecules/Forum/ForumSearch";
-import React from "react";
+import React, { useState } from "react";
 
 type Props = {};
 

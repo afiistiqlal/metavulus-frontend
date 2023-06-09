@@ -10,7 +10,7 @@ type Props = {
 const Seo = ({ metaDesc, metaKey, metaTitle }: Props) => {
   return (
     <Head>
-      <title>Meta Vulus {metaTitle}</title>
+      <title>{`Meta Vulus ${metaTitle ? "| " + metaTitle : ""}`}</title>
       <meta charSet="UTF-8" />
       <meta name="description" content={metaDesc} />
       <meta name="keyword" content={metaKey} />

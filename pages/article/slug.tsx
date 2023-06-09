@@ -10,15 +10,14 @@ import thumbnail from "@/public/images/thumbnail.jpg";
 import articlebanner from "@/public/images/articlebanner.jpg";
 import ButtonPrimary from "@/components/atoms/ButtonPrimary";
 import HomeFooter from "@/components/templates/HomePage/HomeFooter";
+import Seo from "@/components/templates/Seo";
 
 type Props = {};
 
 const slug = (props: Props) => {
   return (
     <div className="w-full flex flex-col">
-      <Head>
-        <title>Meta Vulus</title>
-      </Head>
+      <Seo metaTitle="News" />
       <div className="w-full bg-white shadow-xl z-20">
         <Layout>
           <Navbar />

@@ -14,7 +14,7 @@ type Props = {};
 const index = (props: Props) => {
   return (
     <div className="w-full">
-      <Seo />
+      <Seo metaTitle="Learn" />
       <div className="w-full bg-white">
         <Layout>
           <Navbar />

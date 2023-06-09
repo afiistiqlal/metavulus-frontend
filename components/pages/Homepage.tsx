@@ -15,7 +15,6 @@ type Props = {};
 const Homepage = (props: Props) => {
   return (
     <div className="bg-white relative">
-      <Seo />
       <div className="w-full bg-mv-white-4">
         <Layout>
           <Navbar />

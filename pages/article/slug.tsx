@@ -5,7 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import React from "react";
 import placeholder from "@/public/images/placeholder-learn.png";
-import BreadChumbs from "@/components/molecules/BreadChumbs";
+import BreadChumbs from "@/components/molecules/Breadcrumbs";
 import thumbnail from "@/public/images/thumbnail.jpg";
 import articlebanner from "@/public/images/articlebanner.jpg";
 import ButtonPrimary from "@/components/atoms/ButtonPrimary";

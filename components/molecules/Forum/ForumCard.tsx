@@ -1,3 +1,6 @@
+import Comment from "@/components/atoms/Forum/Comment";
+import Downvote from "@/components/atoms/Forum/Downvote";
+import Upvote from "@/components/atoms/Forum/Upvote";
 import ProfilePicture from "@/components/atoms/ProfilePicture";
 import React, { useState } from "react";
 
@@ -10,7 +13,7 @@ const ForumCard = (props: Props) => {
     { id: 3 },
   ]);
   return (
-    <div className="flex w-auto shadow-xl py-5 rounded-xl justify-between px-10 border">
+    <div className="flex w-auto shadow-xl py-5 rounded-xl justify-between px-10">
       <div className="flex flex-col gap-4">
         <div className="flex items-center gap-4 text-sm">
           <ProfilePicture />
@@ -20,7 +23,7 @@ const ForumCard = (props: Props) => {
           </div>
           <div className="text-mv-gray-3">3hours ago</div>
         </div>
-        <div className="font-QuicksandBold text-2xl border w-5/6">
+        <div className="font-QuicksandBold text-2xl w-5/6">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
           inventore consequuntur impedit temporibus, expedita excepturi
           doloremque mollitia optio eius aliquam.
@@ -30,7 +33,7 @@ const ForumCard = (props: Props) => {
           <div className="flex">
             {peopleLoop.reverse().map((v: any, i: number) => {
               return (
-                <div className={`z-${v.id*10} -mr-2`} key={i}>
+                <div className={`z-${v.id * 10} -mr-2`} key={i}>
                   <ProfilePicture />
                 </div>
               );
@@ -38,10 +41,16 @@ const ForumCard = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col">
-        <div className="">A</div>
-        <div className="">A</div>
-        <div className="">A</div>
+      <div className="flex flex-col gap-4 py-4">
+        <div className="">
+          <Upvote />
+        </div>
+        <div className="">
+          <Downvote />
+        </div>
+        <div className="">
+          <Comment />
+        </div>
       </div>
     </div>
   );

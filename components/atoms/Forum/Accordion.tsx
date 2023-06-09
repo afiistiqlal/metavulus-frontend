@@ -1,4 +1,6 @@
+import Link from "next/link";
 import React, { useState } from "react";
+import { FaChevronDown, FaChevronRight, FaHashtag } from "react-icons/fa";
 
 type AccordionProps = {
   title: string;
@@ -13,17 +15,31 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
   };
 
   return (
-    <div className="w-full py-2 font-QuicksandRegular">
-      <button className="uppercase py-px" onClick={handleToggle}>
-        <span className="">{isOpen ? "▽" : "△"}</span>
-        <span className="m-2"><>#</> {title}</span>
+    <div className="w-full font-QuicksandRegular">
+      <button
+        className="flex items-center uppercase w-full py-1"
+        onClick={handleToggle}
+      >
+        <span className="w-1/12">
+          {isOpen ? <FaChevronDown /> : <FaChevronRight />}
+        </span>
+        <span className="w-11/12 flex items-center gap-1">
+          <FaHashtag /> {title}
+        </span>
       </button>
       {isOpen && (
-        <div className="px-4 py-px pl-12">
+        <div className="w-full">
           {content.map((item, index) => (
-            <p key={index} className="capitalize ">
-              <span className="font-bold">#</span> {item}
-            </p>
+            <div className="flex py-1">
+              <div className="w-1/12"> </div>
+              <Link
+                href={""}
+                key={index}
+                className="capitalize flex items-center w-11/12 gap-1"
+              >
+                <FaHashtag /> {item}
+              </Link>
+            </div>
           ))}
         </div>
       )}

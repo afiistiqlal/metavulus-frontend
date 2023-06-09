@@ -10,7 +10,7 @@ type Props = {
   urlCurrent?: any;
 };
 
-const BreadChumbs = (props: Props) => {
+const Breadcrumbs = (props: Props) => {
   return (
     <div className="flex items-center gap-3">
       <div>
@@ -41,4 +41,4 @@ const BreadChumbs = (props: Props) => {
   );
 };
 
-export default BreadChumbs;
+export default Breadcrumbs;

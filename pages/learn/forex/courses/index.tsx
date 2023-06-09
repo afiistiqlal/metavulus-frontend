@@ -6,7 +6,7 @@ import Image from "next/image";
 import React from "react";
 import trade from "@/public/images/trade-learn.png";
 import progress from "@/public/images/progress.png";
-import BreadChumbs from "@/components/molecules/BreadChumbs";
+import BreadChumbs from "@/components/molecules/Breadcrumbs";
 import { useRouter } from "next/router";
 import ButtonPrimary from "@/components/atoms/ButtonPrimary";
 import CourseCard from "@/components/molecules/CourseCard";

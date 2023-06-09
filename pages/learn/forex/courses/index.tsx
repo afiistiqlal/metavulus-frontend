@@ -14,7 +14,7 @@ import Head from "next/head";
 
 type Props = {};
 
-const index = (props: Props) => {
+const Index = (props: Props) => {
   const router = useRouter();
   const url = router.pathname;
 
@@ -97,4 +97,4 @@ const index = (props: Props) => {
   );
 };
 
-export default index;
+export default Index;

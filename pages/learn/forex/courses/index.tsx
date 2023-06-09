@@ -82,13 +82,13 @@ const Index = (props: Props) => {
             <CourseCard
               id="1"
               title="Preschool"
-              desc="Currency trading? Forex trading? FX trading? Totally clueless about forex? Here's an introduction to the foreign exchange market."
+              desc="Currency trading? Forex trading? FX trading? Totally clueless about forex? Heres an introduction to the foreign exchange market."
             />
 
             <CourseCard
               id="2"
               title="Elementary"
-              desc="Currency trading? Forex trading? FX trading? Totally clueless about forex? Here's an introduction to the foreign exchange market."
+              desc="Currency trading? Forex trading? FX trading? Totally clueless about forex? Heres an introduction to the foreign exchange market."
             />
           </div>
         </BoxedLayout>

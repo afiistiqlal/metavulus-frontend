@@ -64,6 +64,7 @@ module.exports = {
       backgroundImage: {
         hero: "url('/images/herobg.png')",
         arrow: "url('/images/arrow.png')",
+        auth: "url('/images/authbanner.jpg')",
       },
     },
   },

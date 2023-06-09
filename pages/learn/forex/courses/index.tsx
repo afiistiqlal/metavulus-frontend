@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 import ButtonPrimary from "@/components/atoms/ButtonPrimary";
 import CourseCard from "@/components/molecules/CourseCard";
 import Head from "next/head";
+import HomeFooter from "@/components/templates/HomePage/HomeFooter";
 
 type Props = {};
 
@@ -93,6 +94,7 @@ const Index = (props: Props) => {
           </div>
         </BoxedLayout>
       </div>
+      <HomeFooter />
     </div>
   );
 };

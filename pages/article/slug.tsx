@@ -9,6 +9,7 @@ import BreadChumbs from "@/components/molecules/BreadChumbs";
 import thumbnail from "@/public/images/thumbnail.jpg";
 import articlebanner from "@/public/images/articlebanner.jpg";
 import ButtonPrimary from "@/components/atoms/ButtonPrimary";
+import HomeFooter from "@/components/templates/HomePage/HomeFooter";
 
 type Props = {};
 
@@ -104,6 +105,7 @@ const slug = (props: Props) => {
           </div>
         </div>
       </BoxedLayout>
+      <HomeFooter />
     </div>
   );
 };

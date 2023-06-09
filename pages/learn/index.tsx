@@ -1,6 +1,7 @@
 import H3 from "@/components/atoms/H3";
 import OneLiner from "@/components/atoms/OneLiner";
 import Navbar from "@/components/organisms/Navbar";
+import HomeFooter from "@/components/templates/HomePage/HomeFooter";
 import Layout from "@/components/templates/Layout";
 import Seo from "@/components/templates/Seo";
 import React from "react";
@@ -23,6 +24,7 @@ const index = (props: Props) => {
           <H3 text="We'll be launching soon." />
         </div>
       </div>
+      <HomeFooter />
     </div>
   );
 };

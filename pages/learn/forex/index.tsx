@@ -7,6 +7,7 @@ import forex from "@/public/images/forex-hero.jpg";
 import LearnCard from "@/components/molecules/LearnCard";
 import BoxedLayout from "@/components/templates/BoxedLayout";
 import trade from "@/public/images/trade-learn.png";
+import HomeFooter from "@/components/templates/HomePage/HomeFooter";
 
 type Props = {};
 
@@ -43,6 +44,7 @@ const index = (props: Props) => {
           </div>
         </BoxedLayout>
       </div>
+      <HomeFooter />
     </div>
   );
 };

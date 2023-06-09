@@ -8,6 +8,7 @@ import React from "react";
 import placeholder from "@/public/images/placeholder-learn.png";
 import ArticleCard from "@/components/molecules/ArticleCard";
 import { useRouter } from "next/router";
+import HomeFooter from "@/components/templates/HomePage/HomeFooter";
 
 type Props = {};
 
@@ -64,6 +65,7 @@ const Index = (props: Props) => {
           <ArticleCard />
         </div>
       </BoxedLayout>
+      <HomeFooter />
     </div>
   );
 };

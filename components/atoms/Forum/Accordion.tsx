@@ -30,11 +30,10 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
       {isOpen && (
         <div className="w-full">
           {content.map((item, index) => (
-            <div className="flex py-1">
+            <div className="flex py-1" key={index}>
               <div className="w-1/12"> </div>
               <Link
                 href={""}
-                key={index}
                 className="capitalize flex items-center w-11/12 gap-1"
               >
                 <FaHashtag /> {item}

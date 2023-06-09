@@ -84,8 +84,8 @@ const slug = (props: Props) => {
               that can shape our trading journey. By actively participating in
               the network, we open ourselves to a world of possibilities and
               establish connections that can propel us forward.
-              <br /> <br /> So, let's embrace the power of fractal connections
-              within the trading market. Let's foster a supportive community,
+              <br /> <br /> So, lets embrace the power of fractal connections
+              within the trading market. Lets foster a supportive community,
               where knowledge is shared, ideas flourish, and traders thrive.
               Together, we can leverage the strength of our network to amplify
               our trading potential and achieve new heights of success.

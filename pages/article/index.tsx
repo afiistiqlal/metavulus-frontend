@@ -29,7 +29,7 @@ const Index = (props: Props) => {
       <BoxedLayout>
         <div className="flex flex-col items-center mt-32 gap-4">
           <h1 className="font-QuicksandBold text-center text-[44px] leading-[44px]">
-            What's <span className="text-[#78D64B]">Happening</span>
+            Whats <span className="text-[#78D64B]">Happening</span>
           </h1>
           <p className="font-QuicksandMedium text-[18px] text-center w-6/12">
             Stay ahead of the game by staying tuned for our frequent updates,

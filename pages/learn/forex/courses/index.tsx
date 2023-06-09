@@ -62,7 +62,7 @@ const Index = (props: Props) => {
                 The School of Pipsology is the most popular forex trading course
                 on planet Earth. Maybe even on Mars. Our online course is made
                 for beginners to help them learn how to trade the currency
-                markets. Did we mention it's totally free?
+                markets. Did we mention its totally free?
               </p>
               <div onClick={login}>
                 <ButtonPrimary

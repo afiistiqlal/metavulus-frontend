@@ -6,12 +6,6 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    screens: {
-      sm: "360px",
-      md: "960px",
-      lg: "1440px",
-      xl: "1920PX",
-    },
     fontFamily: {
       QuicksandLight: ["QuicksandLight"],
       QuicksandRegular: ["QuicksandRegular"],

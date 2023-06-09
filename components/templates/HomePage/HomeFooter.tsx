@@ -38,8 +38,8 @@ const HomeFooter = (props: Props) => {
   };
   return (
     <Layout>
-      <div className="mt-10 flex flex-row pb-10 w-full">
-        <div className="w-3/12 flex flex-col gap-5">
+      <div className="mt-10 flex flex-col lg:flex-row pb-10 w-full p-6 lg:p-0">
+        <div className="lg:w-3/12 flex flex-col gap-5">
           <figure>
             <Image src={Icon} alt="" width={84} height={84} />
           </figure>
@@ -51,7 +51,7 @@ const HomeFooter = (props: Props) => {
           </div>
         </div>
         <div className="w-9/12 flex flex-col">
-          <div className="w-full flex flex-row justify-end gap-20 ">
+          <div className="w-full flex flex-col mt-10 lg:mt-0 lg:flex-row justify-end gap-5 lg:gap-20 ">
             <div className="flex flex-col gap-5">
               <h3 className="font-QuicksandBold text-[18px] leading-[12px] text-[#55B328]">
                 Company
@@ -168,13 +168,13 @@ const HomeFooter = (props: Props) => {
               </ul>
             </div>
           </div>
-          <div className="flex flex-row justify-end w-full  mt-[50px]">
+          <div className="flex flex-row lg:justify-end w-full  mt-[50px]">
             <form
               onSubmit={emailHandler}
               className="flex flex-col gap-5 items-end"
             >
               <input
-                className="w-[383px] border border-[#E8E8E8] rounded-[30px] px-[26px] py-[16px]"
+                className="lg:w-[383px] border border-[#E8E8E8] rounded-[30px] px-[26px] py-[16px]"
                 placeholder="@ Email Address"
                 type="email"
                 name="email"

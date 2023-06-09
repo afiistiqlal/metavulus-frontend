@@ -6,12 +6,6 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    screens: {
-      sm: "360px",
-      md: "960px",
-      lg: "1440px",
-      xl: "1920PX",
-    },
     fontFamily: {
       QuicksandLight: ["QuicksandLight"],
       QuicksandRegular: ["QuicksandRegular"],
@@ -65,6 +59,7 @@ module.exports = {
       },
       boxShadow: {
         gradient: "-15px -5px 100px -10px #78D64B, 5px 15px 70px -20px #A7E48A",
+        blur: "0px 0px 10000px 100px #f1f1f1",
       },
       backgroundImage: {
         hero: "url('/images/herobg.png')",

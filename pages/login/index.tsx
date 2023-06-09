@@ -8,7 +8,7 @@ import password from "@/public/icon/password.png";
 
 type Props = {};
 
-const index = (props: Props) => {
+const Index = (props: Props) => {
   const [role, setRole] = useState("Trader");
   const [active, setActive] = useState(true);
 
@@ -90,4 +90,4 @@ const index = (props: Props) => {
   );
 };
 
-export default index;
+export default Index;

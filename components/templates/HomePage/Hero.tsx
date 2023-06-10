@@ -32,7 +32,7 @@ const Hero = (props: Props) => {
   return (
     <div className="flex flex-col bg-hero bg-bottom bg-cover bg-no-repeat min-h-screen items-center rounded-b-[75px]">
       <div className="grid grid-cols-5 mt-10 lg:pt-24  relative">
-        <div className="absolute">
+        <div className="absolute hidden lg:flex">
           <svg
             width="1024"
             height="250"
@@ -43,8 +43,8 @@ const Hero = (props: Props) => {
             <motion.path
               d="M-36.5479 340.084C-33.1199 235.96 3.81654 24.6253 124.138 12.2846C274.541 -3.14125 583.058 340.084 804.163 340.084C1025.27 340.084 1245.09 50.8494 1279.79 16.1412"
               stroke="url(#paint0_linear_147_4)"
-              stroke-opacity="0.4"
-              stroke-width="3"
+              strokeOpacity="0.4"
+              strokeWidth="3"
               variants={icon}
               initial="hidden"
               animate="visible"
@@ -53,7 +53,7 @@ const Hero = (props: Props) => {
             <motion.path
               d="M-36.5479 340.084C-33.1199 235.96 3.81654 24.6253 124.138 12.2846C274.541 -3.14125 583.058 340.084 804.163 340.084C1025.27 340.084 1245.09 50.8494 1279.79 16.1412"
               stroke="url(#paint1_linear_147_4)"
-              stroke-width="3"
+              strokeWidth="3"
               variants={icon}
               initial="hidden"
               animate="visible"
@@ -76,8 +76,8 @@ const Hero = (props: Props) => {
                 y2="76.4773"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#55B328" />
-                <stop offset="1" stop-color="#55B328" stop-opacity="0" />
+                <stop stopColor="#55B328" />
+                <stop offset="1" stopColor="#55B328" stopOpacity="0" />
               </linearGradient>
               <linearGradient
                 id="paint1_linear_147_4"
@@ -87,8 +87,8 @@ const Hero = (props: Props) => {
                 y2="263.239"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#55B328" />
-                <stop offset="1" stop-color="#55B328" stop-opacity="0" />
+                <stop stopColor="#55B328" />
+                <stop offset="1" stopColor="#55B328" stopOpacity="0" />
               </linearGradient>
             </defs>
           </svg>
@@ -219,7 +219,7 @@ const Hero = (props: Props) => {
           <OneLiner text="Vulus" />
         </motion.div>
         <div className="flex items-center relative">
-          <div className="rounded-full border-mv-primary-4 border w-14 h-14 flex items-center justify-center animate-ping"></div>
+          <div className="rounded-full border-mv-primary-4 border w-14 h-14 flex items-center justify-center"></div>
           <div className="rounded-full bg-mv-primary-4 w-12 h-12 absolute left-1">
             <div className="w-[70px] lg:w-[100px] absolute top-[-15px] left-[-11px] lg:top-[-15px] lg:left-[-13px]">
               <Image

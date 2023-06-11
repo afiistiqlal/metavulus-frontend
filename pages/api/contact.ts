@@ -12,15 +12,15 @@ export default async function handler(
     port: 465,
     secure: true,
     auth: {
-      user: "no-reply@pk-ent.com",
-      pass: "tmtzeeeedfxagcvf",
+      user: "wisnubl1995@gmail.com",
+      pass: "tzxwaqzvqptvyxpb",
     },
   });
 
   const recipients = [email, "wisnubl1995@gmail.com"];
 
   const info = await transporter.sendMail({
-    from: `"no-reply@pk-ent.com" <${email}>`,
+    from: `"no-reply@metavulus.com" <${email}>`,
     to: recipients.join(", "),
     subject: "Subscribe to our newsletter",
     text: "",

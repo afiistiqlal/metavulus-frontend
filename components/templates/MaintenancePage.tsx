@@ -76,6 +76,7 @@ const MaintenancePage = (props: Props) => {
             name="email"
             className="lg:px-6 lg:py-0 py-3 px-4 text-mv-gray-3 focus:outline-current flex-auto rounded-3xl"
             placeholder="@ email address"
+            required
           />
           <div className="">
             <ButtonPrimary

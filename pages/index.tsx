@@ -1,11 +1,11 @@
-import Homepage from "@/components/pages/Homepage";
+import MaintenancePage from "@/components/templates/MaintenancePage";
 import Seo from "@/components/templates/Seo";
 
 export default function Home() {
   return (
     <>
       <Seo />
-      <Homepage />;
+      <MaintenancePage />
     </>
   );
 }

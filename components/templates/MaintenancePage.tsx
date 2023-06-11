@@ -42,7 +42,7 @@ const MaintenancePage = (props: Props) => {
   };
   return (
     <div className="flex min-w-full min-h-screen bg-maintenance bg-no-repeat bg-right bg-cover relative">
-      <div className="absolute lg:top-[15%] lg:left-[40%] w-1/2 bottom-[15%] left-[25%]">
+      <div className="absolute lg:top-[15%] lg:left-[40%] w-1/2 bottom-[15%] left-[25%] z-[0]">
         <Image
           src={Cone}
           alt="wave"
@@ -69,7 +69,7 @@ const MaintenancePage = (props: Props) => {
         <Paragraph text="We're currently performing scheduled maintenance to improve our services. We apologize for the inconvenience caused." />
         <form
           onSubmit={emailHandler}
-          className="flex justify-between lg:border rounded-full p-px focus:border-4 lg:flex-row flex-col gap-2"
+          className="flex justify-between lg:border rounded-full p-px focus:border-4 lg:flex-row flex-col gap-2 z-10"
         >
           <input
             type="text"

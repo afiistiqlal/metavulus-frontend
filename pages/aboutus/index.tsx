@@ -41,8 +41,14 @@ const index = (props: Props) => {
           <div className="w-1/2">
             <AboutUsCard />
           </div>
-          <div className="w-1/2 flex items-center justify-center">
-            <Image src={ManWithLaptop} alt="" width={400} height={400} />
+          <div className="w-1/2 h-96 flex items-center justify-center">
+            <Image
+              src={ManWithLaptop}
+              alt=""
+              width={400}
+              height={400}
+              className="w-3/4 h-auto"
+            />
           </div>
         </div>
         <div className="flex">
@@ -59,12 +65,19 @@ const index = (props: Props) => {
         </div>
       </div>
       <div className="bg-aboutusfooter bg-contain bg-bottom h-[800px] w-full relative bg-no-repeat flex">
-        <div className="w-80 h-full absolute left-[8%] top-[14%]">
-          <Image src={Happyman} alt="" width={300} height={300} priority />
+        <div className="w-80 h-full absolute left-[16%]">
+          <Image
+            src={Happyman}
+            alt=""
+            width={300}
+            height={300}
+            priority
+            className="w-full h-auto"
+          />
         </div>
-        <div className="flex justify-end w-full items-center mr-20">
-          <div className="w-3/5 h-96 lg:mt-40 flex flex-col justify-center">
-            <div className="text-[48px] font-QuicksandBold tracking-normal leading-[48px] text-mv-primary-2 text-center">
+        <div className="flex justify-end w-full pb-64 pr-8">
+          <div className="w-3/5 h-3/4 lg:mt-40 flex flex-col justify-center">
+            <div className="text-[64px] font-QuicksandBold tracking-normal leading-[48px] text-mv-primary-2 text-center my-8">
               What we stand for
             </div>
             <div className="flex gap-2">

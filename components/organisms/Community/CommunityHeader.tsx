@@ -3,7 +3,7 @@ import React from "react";
 
 type Props = {};
 
-const ForumHeader = (props: Props) => {
+const CommunityHeader = (props: Props) => {
   return (
     <div className="flex h-12 bg-mv-white-2 w-full">
       <div className="flex w-1/2 px-6 justify-start items-center">
@@ -17,4 +17,4 @@ const ForumHeader = (props: Props) => {
   );
 };
 
-export default ForumHeader;
+export default CommunityHeader;

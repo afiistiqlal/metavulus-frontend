@@ -54,8 +54,8 @@ const Navbar = (props: Props) => {
           <Link href={"/learn/forex"} className="">
             <Subtitle menu={true} text="Learn" />
           </Link>
-          <Link href={"/Forum"} className="">
-            <Subtitle menu={true} text="Forum" />
+          <Link href={"/community"} className="">
+            <Subtitle menu={true} text="Community" />
           </Link>
           <Link href={"#"} className="">
             <Subtitle menu={true} text="Events" />

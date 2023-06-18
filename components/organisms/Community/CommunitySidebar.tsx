@@ -1,10 +1,10 @@
-import Accordion from "@/components/atoms/Forum/Accordion";
-import ForumSearch from "@/components/molecules/Forum/ForumSearch";
+import Accordion from "@/components/atoms/Community/Accordion";
+import CommunitySearch from "@/components/molecules/Community/CommunitySearch";
 import React, { useState } from "react";
 
 type Props = {};
 
-const ForumSidebar = (props: Props) => {
+const CommunitySidebar = (props: Props) => {
   const accordionContent = [
     { title: "Beginner's Lore", content: ["Content 1", "Content 2"] },
     {
@@ -32,7 +32,7 @@ const ForumSidebar = (props: Props) => {
   return (
     <aside className="w-96 drop-shadow-xl h-screen flex flex-col bg-white p-4 text-left text-sm gap-2">
       <div className="my-2">
-        <ForumSearch />
+        <CommunitySearch />
       </div>
       <div className="my-2">
         {accordionContent.map((item, index) => (
@@ -43,4 +43,4 @@ const ForumSidebar = (props: Props) => {
   );
 };
 
-export default ForumSidebar;
+export default CommunitySidebar;

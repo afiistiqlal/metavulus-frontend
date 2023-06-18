@@ -11,10 +11,10 @@ const GetLoop = (props: Props) => {
       <div className="text-mv-primary-2">
         <OneLiner text="Get in the loop!" />
       </div>
-      <div className="w-80 text-center">
+      <div className="w-80 text-center my-4">
         <Subtitle text="Never again miss out on your favorite topics!" />
       </div>
-      <div className="flex gap-4">
+      <div className="flex gap-4 my-4">
         <ButtonPrimary text="Connect" />
         <ButtonPrimary text="Join Our Discord" />
       </div>

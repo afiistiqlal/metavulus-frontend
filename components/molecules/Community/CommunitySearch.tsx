@@ -3,7 +3,7 @@ import { BiSearch } from "react-icons/bi";
 
 type Props = {};
 
-const ForumSearch = (props: Props) => {
+const CommunitySearch = (props: Props) => {
   return (
     <div className="flex border rounded-lg w-auto">
       <input
@@ -20,4 +20,4 @@ const ForumSearch = (props: Props) => {
   );
 };
 
-export default ForumSearch;
+export default CommunitySearch;

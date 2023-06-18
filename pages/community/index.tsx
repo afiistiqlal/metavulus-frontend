@@ -1,18 +1,18 @@
-import ForumPage from "@/components/pages/ForumPage";
+import CommunityPageTemplate from "@/components/templates/CommunityPageTemplate";
 import HomeFooter from "@/components/templates/HomePage/HomeFooter";
 import Seo from "@/components/templates/Seo";
 import React from "react";
 
 type Props = {};
 
-const Forum = (props: Props) => {
+const Community = (props: Props) => {
   return (
     <div>
-      <Seo metaTitle="Forum" />
-      <ForumPage />
+      <Seo metaTitle="Community" />
+      <CommunityPageTemplate />
       <HomeFooter />
     </div>
   );
 };
 
-export default Forum;
+export default Community;

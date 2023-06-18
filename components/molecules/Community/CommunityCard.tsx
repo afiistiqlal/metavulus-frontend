@@ -1,12 +1,12 @@
-import Comment from "@/components/atoms/Forum/Comment";
-import Downvote from "@/components/atoms/Forum/Downvote";
-import Upvote from "@/components/atoms/Forum/Upvote";
+import Comment from "@/components/atoms/Community/Comment";
+import Downvote from "@/components/atoms/Community/Downvote";
+import Upvote from "@/components/atoms/Community/Upvote";
 import ProfilePicture from "@/components/atoms/ProfilePicture";
 import React, { useState } from "react";
 
 type Props = {};
 
-const ForumCard = (props: Props) => {
+const CommunityCard = (props: Props) => {
   const [peopleLoop, setPeopleLoop] = useState([
     { id: 1 },
     { id: 2 },
@@ -56,4 +56,4 @@ const ForumCard = (props: Props) => {
   );
 };
 
-export default ForumCard;
+export default CommunityCard;

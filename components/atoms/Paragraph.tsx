@@ -5,7 +5,7 @@ type Props = {
 };
 
 const Paragraph = ({ text }: Props) => {
-  return <p className="md:text-xs lg:text-sm font-QuicksandRegular m-1 tracking-wide leading-2">{text}</p>;
+  return <p className="md:text-xs lg:text-sm font-QuicksandRegular my-1 tracking-wide leading-2">{text}</p>;
 };
 
 export default Paragraph;

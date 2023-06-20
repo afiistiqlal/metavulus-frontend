@@ -57,7 +57,7 @@ const Navbar = (props: Props) => {
           <Link href={"/community"} className="">
             <Subtitle menu={true} text="Community" />
           </Link>
-          <Link href={"#"} className="">
+          <Link href={""} className="">
             <Subtitle menu={true} text="Events" />
           </Link>
           <Link href={"/article"} className="">

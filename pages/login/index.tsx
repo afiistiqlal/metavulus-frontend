@@ -23,10 +23,6 @@ const Index = (props: Props) => {
         </h1>
       </div>
       <div className="w-full lg:w-8/12 h-screen  pt-2 flex flex-col">
-        <div className="ml-3">
-          <Link href={"/"}>Back to home</Link>
-        </div>
-
         <div className="w-full flex flex-col items-center justify-center gap-5 mt-20">
           <Image className="w-1/12" src={logo} alt="" />
           <h1 className="font-QuicksandBold text-[25px] leading-[25px]">
@@ -80,8 +76,8 @@ const Index = (props: Props) => {
                 Login
               </button>
             </form>
-            <Link className="text-center" href={"/register"}>
-              Register Instead
+            <Link className="text-center hover:underline decoration-mv-primary-1" href={"/register"}>
+              <span className="text-mv-primary-1">Register</span> Instead
             </Link>
           </div>
         </div>

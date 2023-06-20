@@ -75,7 +75,7 @@ const RegisterQuestion = (props: Props) => {
             <div className="">🚀</div>
           </div>
         </div>
-        <div className="overflow-y-auto">
+        <form className="overflow-y-auto" action="#">
           {question.map((v, i) => {
             return (
               <div className="" key={i}>
@@ -88,13 +88,13 @@ const RegisterQuestion = (props: Props) => {
               </div>
             );
           })}
-        </div>
-        <button
-          className="w-auto bg-mv-primary-3 text-white rounded-full shadow-md py-4 px-8 hover:bg-mv-secondary-1 transition-all ease-out"
-          type="submit"
-        >
-          Next
-        </button>
+          <button
+            className="w-full bg-mv-primary-3 text-white rounded-full shadow-md py-4 px-8 hover:bg-mv-secondary-1 transition-all ease-out"
+            type="submit"
+          >
+            Finish 🚀
+          </button>
+        </form>
       </div>
     </RegisterTemplate>
   );

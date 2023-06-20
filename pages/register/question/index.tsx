@@ -56,9 +56,9 @@ const RegisterQuestion = (props: Props) => {
   ];
 
   return (
-    <RegisterTemplate>
+    <RegisterTemplate head="Register" backgroundImg="bg-auth" backgroundText="Dive in to lift" backgroundTextColor="Up">
       <RegisterHeader
-        name="John"
+        title="Hey There John!"
         paragraph="These questions will help us tailor the right dashboard for you!"
       />
       <div className="flex flex-col w-full lg:max-w-[1366px] mt-10 lg:mx-auto px-14 gap-5 relative">

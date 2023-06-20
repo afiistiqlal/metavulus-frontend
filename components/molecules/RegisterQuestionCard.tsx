@@ -38,7 +38,7 @@ const RegisterQuestionCard = ({
           onChange={handleAnswerChange}
         />
         <div className="w-6 h-6 flex items-center justify-center">
-          <BsCheckCircle className="" />
+          {selectedAnswer === "1" && <BsCheckCircle className="" />}
         </div>{" "}
         {answer1}
       </label>
@@ -57,7 +57,7 @@ const RegisterQuestionCard = ({
           onChange={handleAnswerChange}
         />
         <div className="w-6 h-6 flex items-center justify-center">
-          <BsCheckCircle className="" />
+          {selectedAnswer === "1" && <BsCheckCircle className="" />}
         </div>{" "}
         <p className="normal-case">{answer2}</p>
       </label>

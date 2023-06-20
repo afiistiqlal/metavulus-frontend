@@ -67,6 +67,7 @@ module.exports = {
         auth: "url('/images/authbanner.jpg')",
         aboutusheader: "url('/images/aboutusheaderbg.png')",
         aboutusfooter: "url('/images/aboutusfooterbg.png')",
+        contactus: "url('/images/contactus.png')",
       },
     },
   },

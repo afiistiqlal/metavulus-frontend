@@ -15,8 +15,10 @@ const RegisterQuestionCard = ({
   answered,
 }: Props) => {
   const [selectedAnswer, setSelectedAnswer] = useState("");
-  const handleAnswerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleAnswerChange = (e: any) => {
+    e.preventDefault;
     setSelectedAnswer(e.target.value);
+    console.log(selectedAnswer);
   };
   return (
     <div className="flex flex-col gap-2 mb-10">
@@ -35,7 +37,7 @@ const RegisterQuestionCard = ({
           name="answer1"
           value="1"
           className="normal-case hidden peer"
-          onChange={handleAnswerChange}
+          onClick={handleAnswerChange}
         />
         <div className="w-6 h-6 flex items-center justify-center">
           {selectedAnswer === "1" && <BsCheckCircle className="" />}
@@ -54,10 +56,10 @@ const RegisterQuestionCard = ({
           name="answer2"
           value="2"
           className="normal-case hidden peer"
-          onChange={handleAnswerChange}
+          onClick={handleAnswerChange}
         />
         <div className="w-6 h-6 flex items-center justify-center">
-          {selectedAnswer === "1" && <BsCheckCircle className="" />}
+          {selectedAnswer === "2" && <BsCheckCircle className="" />}
         </div>{" "}
         <p className="normal-case">{answer2}</p>
       </label>

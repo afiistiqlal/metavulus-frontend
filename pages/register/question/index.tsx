@@ -55,8 +55,26 @@ const RegisterQuestion = (props: Props) => {
     },
   ];
 
+  const totalQuestions = question.length;
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const progress = (currentQuestionIndex / totalQuestions) * 100;
+
+  const handleNextQuestion = () => {
+    if (currentQuestionIndex < totalQuestions - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    }
+  };
+
+  const isLastQuestion = currentQuestionIndex === totalQuestions - 1;
+  const buttonText = isLastQuestion ? "Finish 🚀" : "Next Question";
+
   return (
-    <RegisterTemplate head="Register" backgroundImg="bg-auth" backgroundText="Dive in to lift" backgroundTextColor="Up">
+    <RegisterTemplate
+      head="Register"
+      backgroundImg="bg-auth"
+      backgroundText="Dive in to lift"
+      backgroundTextColor="Up"
+    >
       <RegisterHeader
         title="Hey There John!"
         paragraph="These questions will help us tailor the right dashboard for you!"
@@ -64,13 +82,15 @@ const RegisterQuestion = (props: Props) => {
       <div className="flex flex-col w-full lg:max-w-[1366px] mt-10 lg:mx-auto px-14 gap-5 relative">
         <div className="w-full flex flex-col sticky">
           <p className="flex gap-1">
-            <span className="text-mv-primary-1">50%</span> to launching
+            <span className="text-mv-primary-1">{progress.toFixed(0)}%</span> to
+            launching
           </p>
           <div className="flex items-center">
             <div className="w-full border h-3 rounded-full mr-2 overflow-hidden bg-slate-200">
-              <div className="bg-mv-primary-1 w-6/12 h-2.5 rounded-full">
-                {/* change the w-6/12 to w-12/12 to make it full */}
-              </div>
+              <div
+                className="bg-mv-primary-1 h-2.5 rounded-full"
+                style={{ width: `${progress}%` }}
+              ></div>
             </div>
             <div className="">🚀</div>
           </div>
@@ -79,20 +99,23 @@ const RegisterQuestion = (props: Props) => {
           {question.map((v, i) => {
             return (
               <div className="" key={i}>
-                <RegisterQuestionCard
-                  question={v.question}
-                  answer1={v.answer1}
-                  answer2={v.answer2}
-                  answered
-                />
+                {i === currentQuestionIndex && (
+                  <RegisterQuestionCard
+                    question={v.question}
+                    answer1={v.answer1}
+                    answer2={v.answer2}
+                    answered
+                  />
+                )}
               </div>
             );
           })}
           <button
             className="w-full bg-mv-primary-3 text-white rounded-full shadow-md py-4 px-8 hover:bg-mv-secondary-1 transition-all ease-out"
-            type="submit"
+            type="button"
+            onClick={handleNextQuestion}
           >
-            Finish 🚀
+            {buttonText}
           </button>
         </form>
       </div>

@@ -1,17 +1,20 @@
 import { BsArrowLeft } from "react-icons/bs";
 import Image from "next/image";
 import React, { useState } from "react";
-import email from "@/public/icon/email.png";
+import emailLogo from "@/public/icon/email.png";
 import passwordLogo from "@/public/icon/password.png";
 import Link from "next/link";
 import RegisterTemplate from "@/components/templates/RegisterTemplate";
 import RegisterHeader from "@/components/molecules/RegisterHeader";
+import RegisterQuestion from "@/pages/register/question/index"; // Import the new component
 
 type Props = {};
 
 const Index = (props: Props) => {
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showIndicator, setShowIndicator] = useState(false);
+  const [registerClicked, setRegisterClicked] = useState(false); // New state variable
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newPassword = e.target.value;
@@ -19,14 +22,14 @@ const Index = (props: Props) => {
     setShowIndicator(true);
   };
 
+  const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newEmail = e.target.value;
+    setEmail(newEmail);
+    setShowIndicator(true);
+    console.log(email);
+  };
+
   const checkPasswordStrength = (password: string) => {
-    // Implement your password strength checking logic here
-    // You can use any password strength library or custom logic
-    // to determine the password strength and return a corresponding value
-    // For example, you can check the length, complexity, or use regex patterns
-
-    // Placeholder logic (using a basic length check)
-
     if (password.length < 6) {
       return "Weak";
     } else if (password.length < 8) {
@@ -57,8 +60,20 @@ const Index = (props: Props) => {
 
   const indicatorColor = getIndicatorColor(passwordStrength);
 
+  const handleRegister = () => {
+    setRegisterClicked(true); // Update state when the "Register" button is clicked
+  };
+
+  if (registerClicked) {
+    return <RegisterQuestion />;
+  }
   return (
-    <RegisterTemplate head="Register Question" backgroundImg="bg-auth" backgroundText="Dive in to lift" backgroundTextColor="Up">
+    <RegisterTemplate
+      head="Register Question"
+      backgroundImg="bg-auth"
+      backgroundText="Dive in to lift"
+      backgroundTextColor="Up"
+    >
       <RegisterHeader
         title="Hey there Trader!"
         paragraph="Help us get to know you"
@@ -70,10 +85,10 @@ const Index = (props: Props) => {
           </h1>
           <form
             className="flex flex-col lg:w-[550px] gap-3"
-            action="/register/question"
+            onSubmit={handleRegister}
           >
             <div className="flex items-center gap-3">
-              <Image className="w-[10px] h-[10px]" src={email} alt="" />
+              <Image className="w-[10px] h-[10px]" src={emailLogo} alt="" />
               <label className="text-[#A3A3A3] text-[15px] leading-[15px]">
                 Email Address
               </label>
@@ -85,6 +100,7 @@ const Index = (props: Props) => {
               id="email"
               placeholder="JohnDoe@domain.com"
               required
+              onChange={handleEmail}
             />
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
@@ -96,11 +112,6 @@ const Index = (props: Props) => {
                 <label className="text-[#A3A3A3] text-[15px] leading-[15px]">
                   Password
                 </label>
-              </div>
-              <div>
-                <Link href={"#"} className="text-sm text-gray-800">
-                  Forgot Password?
-                </Link>
               </div>
             </div>
             <input

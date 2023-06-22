@@ -5,20 +5,15 @@ type Props = {
   question: string;
   answer1: string;
   answer2: string;
-  answered?: boolean;
+  onSelectAnswered: (value: string) => void;
 };
 
-const RegisterQuestionCard = ({
-  question,
-  answer1,
-  answer2,
-  answered,
-}: Props) => {
+const RegisterQuestionCard = ({ question, answer1, answer2, onSelectAnswered }: Props) => {
   const [selectedAnswer, setSelectedAnswer] = useState("");
-  const handleAnswerChange = (e: any) => {
-    e.preventDefault;
-    setSelectedAnswer(e.target.value);
-    console.log(selectedAnswer);
+
+  const onSelectAnswer = (value: string) => {
+    setSelectedAnswer(value);
+    onSelectAnswered(value);
   };
   return (
     <div className="flex flex-col gap-2 mb-10">
@@ -37,7 +32,8 @@ const RegisterQuestionCard = ({
           name="answer1"
           value="1"
           className="normal-case hidden peer"
-          onClick={handleAnswerChange}
+          checked={selectedAnswer == "1"}
+          onChange={() => onSelectAnswer("1")}
         />
         <div className="w-6 h-6 flex items-center justify-center">
           {selectedAnswer === "1" && <BsCheckCircle className="" />}
@@ -56,7 +52,8 @@ const RegisterQuestionCard = ({
           name="answer2"
           value="2"
           className="normal-case hidden peer"
-          onClick={handleAnswerChange}
+          checked={selectedAnswer == "2"}
+          onChange={() => onSelectAnswer("2")}
         />
         <div className="w-6 h-6 flex items-center justify-center">
           {selectedAnswer === "2" && <BsCheckCircle className="" />}

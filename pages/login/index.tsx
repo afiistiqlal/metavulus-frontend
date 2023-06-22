@@ -3,14 +3,45 @@ import Image from "next/image";
 import React, { useState } from "react";
 import logo from "@/public/images/logo-big.png";
 import Link from "next/link";
-import email from "@/public/icon/email.png";
-import password from "@/public/icon/password.png";
+import emailLogo from "@/public/icon/email.png";
+import passwordLogo from "@/public/icon/password.png";
+import { useRouter } from "next/router";
 
 type Props = {};
 
 const Index = (props: Props) => {
-  const [role, setRole] = useState("Trader");
-  const [active, setActive] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const router = useRouter();
+
+  const handleLogin = async (e: any) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:8080/account/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data); // Handle the response data as needed
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("id", data.id);
+        router.push("/dashboard");
+      } else {
+        setError("Invalid username or password"); // Set the error message
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+    }
+  };
 
   return (
     <div className="max-w-full mx-auto flex h-screen lg:flex-row gap-5 flex-col">
@@ -31,13 +62,17 @@ const Index = (props: Props) => {
           <h3 className="font-QuicksandRegular text-[20px] leading-[20px]">
             Millions are waiting for you to connect!
           </h3>
+          {error}
         </div>
 
         <div className="flex flex-col lg:max-w-[1366px] mt-10 lg:mx-auto px-8 gap-5">
           <div className="flex flex-col w-full gap-3">
-            <form className="flex flex-col lg:w-[550px] gap-3" action="">
+            <form
+              className="flex flex-col lg:w-[550px] gap-3"
+              onSubmit={handleLogin}
+            >
               <div className="flex items-center gap-3">
-                <Image className="w-[10px] h-[10px]" src={email} alt="" />
+                <Image className="w-[10px] h-[10px]" src={emailLogo} alt="" />
                 <label className="text-[#A3A3A3] text-[15px] leading-[15px]">
                   Email Address
                 </label>
@@ -49,10 +84,16 @@ const Index = (props: Props) => {
                 id="email"
                 placeholder="JohnDoe@domain.com"
                 required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
-                  <Image className="w-[10px] h-[10px]" src={password} alt="" />
+                  <Image
+                    className="w-[10px] h-[10px]"
+                    src={passwordLogo}
+                    alt=""
+                  />
                   <label className="text-[#A3A3A3] text-[15px] leading-[15px]">
                     Password
                   </label>
@@ -68,6 +109,8 @@ const Index = (props: Props) => {
                 id="password"
                 placeholder="Your Password"
                 required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <button
                 className="w-auto bg-mv-primary-3 text-white rounded-full shadow-md py-4 px-8 hover:bg-mv-secondary-1 transition-all ease-out"
@@ -76,7 +119,10 @@ const Index = (props: Props) => {
                 Login
               </button>
             </form>
-            <Link className="text-center hover:underline decoration-mv-primary-1" href={"/register"}>
+            <Link
+              className="text-center hover:underline decoration-mv-primary-1"
+              href={"/register"}
+            >
               <span className="text-mv-primary-1">Register</span> Instead
             </Link>
           </div>

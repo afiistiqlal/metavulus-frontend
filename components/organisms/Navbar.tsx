@@ -51,13 +51,13 @@ const Navbar = (props: Props) => {
       </div>
       <div className="w-6/12 lg:flex flex-row  gap-12 mr-5">
         <div className="hidden gap-5 items-center lg:flex">
-          <Link href={"/learn/forex"} className="">
+          <Link href={"/learn"} className="">
             <Subtitle menu={true} text="Learn" />
           </Link>
           <Link href={"/community"} className="">
             <Subtitle menu={true} text="Community" />
           </Link>
-          <Link href={""} className="">
+          <Link href={"/events"} className="">
             <Subtitle menu={true} text="Events" />
           </Link>
           <Link href={"/article"} className="">

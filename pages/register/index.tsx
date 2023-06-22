@@ -65,7 +65,9 @@ const Index = (props: Props) => {
   };
 
   if (registerClicked) {
-    return <RegisterQuestion />;
+    console.log(email);
+    console.log(password);
+    return <RegisterQuestion email={email} password={password} />;
   }
   return (
     <RegisterTemplate
@@ -74,10 +76,7 @@ const Index = (props: Props) => {
       backgroundText="Dive in to lift"
       backgroundTextColor="Up"
     >
-      <RegisterHeader
-        title="Hey there Trader!"
-        paragraph="Help us get to know you"
-      />
+      <RegisterHeader title="Hey there!" paragraph="Help us get to know you" />
       <div className="flex flex-col w-full lg:max-w-[1366px] mt-10 lg:mx-auto px-8 gap-5">
         <div className="flex flex-col max-w-[1366px] mx-auto gap-3">
           <h1 className="font-QuicksandMedium text-[20px] leading-[20px] text-mv-primary-1 my-2">

@@ -1,12 +1,25 @@
 import RegisterHeader from "@/components/molecules/RegisterHeader";
 import RegisterQuestionCard from "@/components/molecules/RegisterQuestionCard";
 import RegisterTemplate from "@/components/templates/RegisterTemplate";
-import React, { useState } from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 
-type Props = {};
+type Props = {
+  email: string;
+  password: string;
+};
 
-const RegisterQuestion = (props: Props) => {
-  const [answered, setAnswered] = useState(false);
+const RegisterQuestion = ({ email, password }: Props) => {
+  const [answered, setAnswered] = useState<string[]>([]);
+  const [selectedAnswers, setSelectedAnswers] = useState<string>("");
+  const [role, setRole] = useState("");
+  const [user, setUser] = useState({
+    email: email,
+    password: password,
+  });
+  const [completed, setCompleted] = useState(false);
+  const router = useRouter();
+
   const question = [
     {
       question: "Tipe jangka investasi Anda?",
@@ -63,10 +76,60 @@ const RegisterQuestion = (props: Props) => {
     if (currentQuestionIndex < totalQuestions - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
+
+    answered.push(selectedAnswers);
+    const count: { [key: string]: number } = {};
+
+    answered.forEach((element: string) => {
+      count[element] = (count[element] || 0) + 1;
+    });
+
+    if (count["1"] > count["2"] || count["2"] == null) {
+      setRole("Trader");
+    } else {
+      setRole("Investor");
+    }
+
+    console.log(role);
+    if (isLastQuestion) {
+      setCompleted(true); // Set completed to true when reaching the last question
+    }
+  };
+
+  const handleQuestion = (answer: string) => {
+    setSelectedAnswers(() => answer);
   };
 
   const isLastQuestion = currentQuestionIndex === totalQuestions - 1;
   const buttonText = isLastQuestion ? "Finish 🚀" : "Next Question";
+
+  const submit = async () => {
+    try {
+      const url = "http://localhost:8080/account/register";
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+          role: role,
+        }),
+      });
+      if (response.ok) {
+        alert("Berhasil");
+        router.push("/login");
+      } else {
+        alert("Email is already exist");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+    }
+    setCompleted(true);
+  };
+
+  useEffect(() => {
+    console.log(role); // Log the updated value of role
+  }, [role]);
 
   return (
     <RegisterTemplate
@@ -76,7 +139,7 @@ const RegisterQuestion = (props: Props) => {
       backgroundTextColor="Up"
     >
       <RegisterHeader
-        title="Hey There John!"
+        title={`Hey There`}
         paragraph="These questions will help us tailor the right dashboard for you!"
       />
       <div className="flex flex-col w-full lg:max-w-[1366px] mt-10 lg:mx-auto px-14 gap-5 relative">
@@ -95,29 +158,42 @@ const RegisterQuestion = (props: Props) => {
             <div className="">🚀</div>
           </div>
         </div>
-        <form className="overflow-y-auto" action="#">
-          {question.map((v, i) => {
-            return (
-              <div className="" key={i}>
-                {i === currentQuestionIndex && (
-                  <RegisterQuestionCard
-                    question={v.question}
-                    answer1={v.answer1}
-                    answer2={v.answer2}
-                    answered
-                  />
-                )}
-              </div>
-            );
-          })}
-          <button
-            className="w-full bg-mv-primary-3 text-white rounded-full shadow-md py-4 px-8 hover:bg-mv-secondary-1 transition-all ease-out"
-            type="button"
-            onClick={handleNextQuestion}
-          >
-            {buttonText}
-          </button>
-        </form>
+
+        {completed ? (
+          <>
+            <h2>Congratulations!</h2>
+            <button
+              className="w-full bg-mv-primary-3 text-white rounded-full shadow-md py-4 px-8 hover:bg-mv-secondary-1 transition-all ease-out"
+              onClick={submit}
+            >
+              Let's Go!
+            </button>
+          </> // Display "Congratulations" when completed is true
+        ) : (
+          <form className="overflow-y-auto" action="#">
+            {question.map((v, i) => {
+              return (
+                <div className="" key={i}>
+                  {i === currentQuestionIndex && (
+                    <RegisterQuestionCard
+                      question={v.question}
+                      answer1={v.answer1}
+                      answer2={v.answer2}
+                      onSelectAnswered={handleQuestion}
+                    />
+                  )}
+                </div>
+              );
+            })}
+            <button
+              className="w-full bg-mv-primary-3 text-white rounded-full shadow-md py-4 px-8 hover:bg-mv-secondary-1 transition-all ease-out"
+              type="button"
+              onClick={handleNextQuestion}
+            >
+              {buttonText}
+            </button>
+          </form>
+        )}
       </div>
     </RegisterTemplate>
   );

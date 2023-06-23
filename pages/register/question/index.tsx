@@ -166,7 +166,7 @@ const RegisterQuestion = ({ email, password }: Props) => {
               className="w-full bg-mv-primary-3 text-white rounded-full shadow-md py-4 px-8 hover:bg-mv-secondary-1 transition-all ease-out"
               onClick={submit}
             >
-              Let's Go!
+              Lets Go!
             </button>
           </> // Display "Congratulations" when completed is true
         ) : (

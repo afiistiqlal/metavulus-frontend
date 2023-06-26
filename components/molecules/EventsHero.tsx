@@ -9,20 +9,21 @@ type Props = {
   title: string;
   date: string;
   content: string;
+  category: string;
 };
 
-const EventsHero = ({ title, date, content }: Props) => {
+const EventsHero = ({ title, date, content, category }: Props) => {
   return (
-    <div className="flex my-8 gap-6 py-4">
+    <div className="flex my-8 gap-6 py-4 px-6">
       <div className="w-1/2 bg-mv-secondary-6 rounded-xl relative">
-        <EventMark/>
+        <EventMark />
       </div>
       <div className="w-1/2 py-6 ">
         <div className="flex flex-col gap-2">
           <div className="flex gap-8 text-mv-primary-1">
             <div className="">🔥Hot</div>
             <div className="flex gap-1 items-center">
-              <BiChair /> Conference
+              <BiChair /> {category}
             </div>
           </div>
           <div className="">

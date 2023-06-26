@@ -6,10 +6,22 @@ import Subtitle from "../atoms/Subtitle";
 import Layout from "./Layout";
 import EventsHero from "../molecules/EventsHero";
 import EventsCard from "../molecules/EventsCard";
+import { api } from "@/lib/graphql/api";
+import { EVENTS } from "@/lib/graphql/query";
 
 type Props = {};
 
-const EventsPageLayout = (props: Props) => {
+export async function getServerSideProps() {
+  const { events }: any = await api.request(EVENTS);
+
+  return {
+    Props: {
+      events,
+    },
+  };
+}
+
+const EventsPageLayout = ({ events }: any) => {
   return (
     <div>
       <Navbar />
@@ -31,12 +43,19 @@ const EventsPageLayout = (props: Props) => {
             />
           </label>
         </div>
-        <EventsHero
-          title="Metavulus Conference"
-          date="January 31 2023"
-          content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem nostrum labore atque placeat voluptatum error! Voluptates laudantium ratione animi amet? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque culpa voluptates eaque quia, odit fugit commodi sit soluta dolor dolorum cum facere quis officia nihil! Nemo error et minima non ex harum rerum deserunt obcaecati consequatur, commodi dignissimos totam ullam ad praesentium quod dolores! Fugiat, consectetur a assumenda maiores 
-          exercitationem, nobis temporibus autem repellendus modi nesciunt esse vitae, similique eius."
-        />
+        {events.map((v: any, i: number) => {
+          return (
+            <div>
+              <EventsHero
+                category="Conference"
+                title="Metavulus Conference"
+                date="January 31 2023"
+                content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem nostrum labore atque placeat voluptatum error! Voluptates laudantium ratione animi amet? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque culpa voluptates eaque quia, odit fugit commodi sit soluta dolor dolorum cum facere quis officia nihil! Nemo error et minima non ex harum rerum deserunt obcaecati consequatur, commodi dignissimos totam ullam ad praesentium quod dolores! Fugiat, consectetur a assumenda maiores 
+              exercitationem, nobis temporibus autem repellendus modi nesciunt esse vitae, similique eius."
+              />
+            </div>
+          );
+        })}
 
         <div className="w-full mt-10 mb-2 flex items-center">
           <div className="w-1/2 flex gap-2 px-2">

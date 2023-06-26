@@ -45,7 +45,7 @@ const EventsPageLayout = ({ events }: any) => {
         </div>
         {events.map((v: any, i: number) => {
           return (
-            <div>
+            <div key={i}>
               <EventsHero
                 category="Conference"
                 title="Metavulus Conference"

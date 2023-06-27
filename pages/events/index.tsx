@@ -68,8 +68,8 @@ const Events = ({ events: initialEvents, eventCategories }: any) => {
     <>
       <Seo />
       <div>
-        <Navbar />
         <Layout>
+          <Navbar />
           <div className="flex flex-col text-center gap-8 justify-center w-1/2 mx-auto mt-20 mb-22">
             <HomePageSubHeader textColor="Our" text="Events" />
             <Subtitle text="Stay ahead of the game by staying tuned for our frequent updates, where you can catch up on all the latest happenings, insights, and stories from our company." />
@@ -78,6 +78,7 @@ const Events = ({ events: initialEvents, eventCategories }: any) => {
           {featuredEvent && (
             <div>
               <EventsHero
+                image={featuredEvent.eventThumbnail.url}
                 category={featuredEvent.eventCategory.categoryTitle}
                 title={featuredEvent.eventTitle}
                 date={formatDate(featuredEvent.eventDate)}
@@ -88,8 +89,8 @@ const Events = ({ events: initialEvents, eventCategories }: any) => {
             </div>
           )}
 
-          <div className="w-full mt-10 mb-2 flex items-center px-6">
-            <div className="w-1/2 flex gap-2 px-2">
+          <div className="w-full mt-10 mb-2 flex lg:flex-row flex-col-reverse items-center px-6">
+            <div className="lg:w-1/2 w-full flex flex-wrap gap-2 px-2">
               <div
                 className={`border rounded-[30px] px-4 py-2 cursor-pointer hover:bg-mv-secondary-1 transition-all ease-out hover:text-white ${
                   selectedCategory === "all"
@@ -117,7 +118,7 @@ const Events = ({ events: initialEvents, eventCategories }: any) => {
                 );
               })}
             </div>
-            <div className="w-1/2">
+            <div className="lg:w-1/2 w-full">
               <label
                 htmlFor="eventSearch"
                 className="relative text-gray-400 focus-within:text-gray-600 block"
@@ -136,11 +137,12 @@ const Events = ({ events: initialEvents, eventCategories }: any) => {
             </div>
           </div>
 
-          <div className="grid grid-cols-4 gap-2 grid-rows-2 mb-20 px-6">
+          <div className="grid  lg:grid-cols-4 grid-cols-2 gap-2  mb-20 px-6">
             {filteredEvents.map((v: any, i: number) => {
               return (
                 <div key={i}>
                   <EventsCard
+                    image={v.eventThumbnail ? v.eventThumbnail.url : null}
                     title={v.eventTitle}
                     date={formatDate(v.eventDate)}
                     buttonText="Join"

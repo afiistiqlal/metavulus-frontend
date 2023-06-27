@@ -8,6 +8,7 @@ type LoginContextType = {
   setPassword: React.Dispatch<React.SetStateAction<string>>;
   handleLogin: () => Promise<void>;
   handleLogout: () => void;
+  error: string;
 };
 
 const LoginContext = createContext<LoginContextType | undefined>(undefined);
@@ -15,6 +16,7 @@ const LoginContext = createContext<LoginContextType | undefined>(undefined);
 export const useLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const router = useRouter();
 
   const handleLogin = async () => {
@@ -34,7 +36,7 @@ export const useLogin = () => {
         sessionStorage.setItem("id", data.id);
         router.push("/dashboard");
       } else {
-        throw new Error("Invalid username or password");
+        setError("Invalid username or password");
       }
     } catch (error) {
       console.error("Login error:", error);
@@ -48,7 +50,15 @@ export const useLogin = () => {
     // Add any additional logout logic here
   };
 
-  return { email, setEmail, password, setPassword, handleLogin, handleLogout };
+  return {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    handleLogin,
+    handleLogout,
+    error,
+  };
 };
 
 export const useLoginContext = () => {

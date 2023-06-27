@@ -4,21 +4,30 @@ import { AiOutlineCalendar } from "react-icons/ai";
 import Paragraph from "../atoms/Paragraph";
 import { BiChair } from "react-icons/bi";
 import EventMark from "../atoms/EventMark";
+import Image from "next/image";
 
 type Props = {
   title: string;
   date: string;
   content: string;
   category: string;
+  image?: any;
 };
 
-const EventsHero = ({ title, date, content, category }: Props) => {
+const EventsHero = ({ title, date, content, category, image }: Props) => {
   return (
-    <div className="flex my-8 gap-6 py-4 px-6">
-      <div className="w-1/2 bg-mv-secondary-6 rounded-xl relative">
+    <div className="flex lg:flex-row flex-col my-8  gap-6 py-4 px-6">
+      <div className="lg:w-1/2 w-full h-[400px] rounded-xl relative overflow-hidden">
+        <Image
+          className="w-full h-full object-cover"
+          src={image}
+          alt={title}
+          width={1000}
+          height={100}
+        />
         <EventMark />
       </div>
-      <div className="w-1/2 py-6 ">
+      <div className="lg:w-1/2 w-full py-6 ">
         <div className="flex flex-col gap-2">
           <div className="flex gap-8 text-mv-primary-1">
             <div className="">🔥Hot</div>

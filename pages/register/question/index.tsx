@@ -85,9 +85,9 @@ const RegisterQuestion = ({ email, password }: Props) => {
     });
 
     if (count["1"] > count["2"] || count["2"] == null) {
-      setRole("Trader");
-    } else {
       setRole("Investor");
+    } else {
+      setRole("Trader");
     }
 
     console.log(role);

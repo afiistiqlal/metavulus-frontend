@@ -37,7 +37,7 @@ const Navbar = (props: Props) => {
   }, []);
 
   return (
-    <div className="flex justify-between items-center py-5 px-6 lg:px-[72px] ">
+    <div className="flex justify-between items-center py-5 px-6 lg:px-[72px]">
       <div className="w-6/12">
         <Link href={"/"}>
           <Image

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "@/public/images/logo-big.png";
 import Link from "next/link";
 import emailLogo from "@/public/icon/email.png";
@@ -11,14 +11,26 @@ import { useLoginContext } from "@/lib/hooks/useLogin";
 type Props = {};
 
 const Index = (props: Props) => {
-  const [error, setError] = useState("");
-  const { email, setEmail, password, setPassword, handleLogin } =
-    useLoginContext(); // Use the useLoginContext hook
+  const { email, setEmail, password, setPassword, handleLogin, error } =
+    useLoginContext();
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await handleLogin();
   };
+
+  const check = () => {
+    const token = sessionStorage.getItem("token");
+    if (token) {
+      router.push("/dashboard");
+      return <div>Kosong</div>;
+    }
+  };
+
+  useEffect(() => {
+    check();
+  }, []);
 
   return (
     <div className="max-w-full mx-auto flex h-screen lg:flex-row gap-5 flex-col">

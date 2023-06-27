@@ -7,6 +7,7 @@ type LoginContextType = {
   password: string;
   setPassword: React.Dispatch<React.SetStateAction<string>>;
   handleLogin: () => Promise<void>;
+  handleLogout: () => void;
 };
 
 const LoginContext = createContext<LoginContextType | undefined>(undefined);

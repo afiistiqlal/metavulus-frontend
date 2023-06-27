@@ -6,41 +6,18 @@ import Link from "next/link";
 import emailLogo from "@/public/icon/email.png";
 import passwordLogo from "@/public/icon/password.png";
 import { useRouter } from "next/router";
+import { useLoginContext } from "@/lib/hooks/useLogin";
 
 type Props = {};
 
 const Index = (props: Props) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const { email, setEmail, password, setPassword, handleLogin } =
+    useLoginContext(); // Use the useLoginContext hook
 
-  const router = useRouter();
-
-  const handleLogin = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    try {
-      const response = await fetch("http://localhost:8080/account/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        console.log(data); // Handle the response data as needed
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("id", data.id);
-        router.push("/dashboard");
-      } else {
-        setError("Invalid username or password"); // Set the error message
-      }
-    } catch (error) {
-      console.error("Login error:", error);
-    }
+    await handleLogin();
   };
 
   return (
@@ -69,7 +46,7 @@ const Index = (props: Props) => {
           <div className="flex flex-col w-full gap-3">
             <form
               className="flex flex-col lg:w-[550px] gap-3"
-              onSubmit={handleLogin}
+              onSubmit={handleSubmit}
             >
               <div className="flex items-center gap-3">
                 <Image className="w-[10px] h-[10px]" src={emailLogo} alt="" />
